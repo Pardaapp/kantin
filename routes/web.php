@@ -25,7 +25,7 @@ Route::get('/', [Home::class, 'render'])->name('home');
 
 Route::get('/product/{product_id}', [ProductDetails::class, 'render'])->name('product.details');
 
-Route::post('/add-to-cart', [Cart::class, 'addToCart'])->name('cart.add');
+Route::post('/add-to-cart', [Cart::class    , 'addToCart'])->name('cart.add')->middleware('auth');
 Route::post('/inc-qty', [Cart::class, 'incQty'])->name('qty.up');
 Route::post('/dec-qty', [Cart::class, 'decQty'])->name('qty.down');
 Route::delete('/destroy-item', [Cart::class, 'destroyItem'])->name('destroy.item');

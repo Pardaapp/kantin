@@ -37,7 +37,7 @@
                     <div class="price_slider_amount">
                         <div class="label-input">
                             <span>Jangkauan:</span>
-                            <input type="text" id="amount" name="range" placeholder="Required format Rp xx.xxx.xxx - Rp xx.xxx.xxx">
+                            {{-- <input type="text" id="amount" name="range" placeholder="Required format Rp xxx.xxx.xxx - Rp xxx.xxx.xxx"> --}}
                         </div>
                     </div>
                 </div>

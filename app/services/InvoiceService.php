@@ -33,8 +33,7 @@ class InvoiceService {
         }
 
         $invoice = Invoice::make('receipt')
-        // ability to include translated invoice status
-        // in case it was paid
+       
         ->status(__('invoices::invoice.paid'))
         ->sequence(667)
         ->serialNumberFormat('{SEQUENCE}/{SERIES}')
@@ -52,13 +51,10 @@ class InvoiceService {
             ->filename($client->name . '-' . $customer->name)
             ->addItems($items)
             ->logo(public_path('vendor/invoices/logo.png'))
-            // You can additionally save generated invoice to configured disk
             ->save('public');
 
         $link = $invoice->url();
-        // Then send email to party with link
 
-        // And return invoice itself to browser or have a different view
         return $invoice;
     }
 }
